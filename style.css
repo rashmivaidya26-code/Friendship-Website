@@ -1,0 +1,267 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  background: #fff7fb;
+  color: #75465d;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 25px 15px;
+  background: #ffe3ef;
+}
+
+header h1 {
+  color: #d94f88;
+  font-size: 32px;
+}
+
+header p {
+  margin-top: 8px;
+  color: #936078;
+}
+
+.hero {
+  min-height: 430px;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe4f0, #fff8fc, #fce2f5);
+  position: relative;
+}
+
+.butterfly {
+  font-size: 45px;
+  animation: fly 3s ease-in-out infinite;
+}
+
+.small-heading {
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin: 20px 0;
+  color: #c65d8b;
+}
+
+.hero h2 {
+  font-size: clamp(35px, 7vw, 58px);
+  line-height: 1.2;
+  color: #a83f70;
+}
+
+.hero h2 span {
+  color: #e56b9e;
+}
+
+.intro {
+  max-width: 480px;
+  margin: 20px auto;
+  line-height: 1.8;
+}
+
+button {
+  border: none;
+  padding: 13px 24px;
+  background: #e56b9e;
+  color: white;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+  box-shadow: 0 5px 15px #e56b9e40;
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: #c7477e;
+}
+
+.message, .quote, .final {
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.message h2, .gallery h2, .quote h2 {
+  color: #d94f88;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.message p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 2;
+  font-size: 17px;
+}
+
+.gallery {
+  text-align: center;
+  padding: 65px 20px;
+  background: #ffeaf3;
+}
+
+.section-subtitle {
+  margin-bottom: 30px;
+}
+
+.photos {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.photo-card {
+  background: white;
+  padding: 12px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px #bd739333;
+  transition: transform 0.4s;
+  animation: appear 1s ease both;
+}
+
+.photo-card:hover {
+  transform: translateY(-10px) rotate(-2deg);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.photo-card p {
+  padding: 14px 5px 5px;
+  color: #bd4f82;
+  font-weight: bold;
+}
+
+.quote {
+  background: #fff7fb;
+}
+
+#quoteText {
+  font-size: 20px;
+  font-style: italic;
+  margin: 20px auto;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.final {
+  background: linear-gradient(135deg, #fbd7e8, #fff0f7);
+}
+
+.final h2 {
+  color: #bd477b;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #f8d7e6;
+  color: #874461;
+  line-height: 1.8;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  animation: floatUp linear forwards;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fly {
+  0%, 100% { transform: translateY(0) rotate(-10deg); }
+  50% { transform: translateY(-18px) rotate(10deg); }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: #482538aa;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+  animation: appear 0.4s ease;
+}
+
+.modal-content {
+  background: #fff7fb;
+  text-align: center;
+  padding: 40px 25px;
+  border-radius: 25px;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 35px #0002;
+}
+
+.modal-content h2 {
+  color: #d94f88;
+  margin: 15px 0;
+}
+
+.modal-content p {
+  line-height: 1.7;
+}
+
+.big-heart {
+  font-size: 65px;
+  animation: fly 1.5s infinite;
+}
+
+.close {
+  position: absolute;
+  right: 12px;
+  top: 5px;
+  background: transparent;
+  color: #b74778;
+  font-size: 30px;
+  box-shadow: none;
+  padding: 5px 12px;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 26px; }
+  .hero { padding: 65px 18px; }
+  .message, .gallery, .quote, .final {
+    padding: 45px 18px;
+  }
+}
